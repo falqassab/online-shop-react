@@ -28,6 +28,9 @@ function Navbar() {
           {token ? (
             <>
               <li>
+                <Link to="/add-product">Add Product</Link>
+              </li>
+              <li>
                 <Link to="/profile">Profile</Link>
               </li>
               <li>

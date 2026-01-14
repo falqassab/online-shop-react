@@ -2,12 +2,20 @@ import React from 'react';
 import './ProductCard.css';
 
 function ProductCard({ product }) {
+  // Construct full image URL
+  const imageUrl = product.image_url 
+    ? `http://localhost:3001${product.image_url}` 
+    : 'https://via.placeholder.com/300x200?text=No+Image';
+
   return (
     <div className="product-card">
       <div className="product-image">
         <img 
-          src={product.image_url || 'https://via.placeholder.com/300x200?text=No+Image'} 
+          src={imageUrl} 
           alt={product.name}
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/300x200?text=No+Image';
+          }}
         />
       </div>
       
