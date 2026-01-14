@@ -47,7 +47,6 @@ function ProductCard({ product }) {
         
         {isLoggedIn && (
           <Link to={`/edit-product/${product.id}`} className="btn-edit" title="Edit Product">
-            <img src="/edit.png" alt="Edit" className="edit-icon" />
             Edit
           </Link>
         )}

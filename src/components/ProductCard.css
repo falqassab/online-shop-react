@@ -77,13 +77,13 @@
   border-radius: 6px;
   font-size: 12px;
   font-weight: 500;
+  margin-right: 8px;
 }
 
 .btn-edit {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  display: inline-block;
   margin-top: 12px;
+  margin-left: 8px;
   padding: 8px 16px;
   background-color: #f39c12;
   color: white;
@@ -98,10 +98,4 @@
 .btn-edit:hover {
   background-color: #e67e22;
   transform: translateY(-2px);
-}
-
-.edit-icon {
-  width: 16px;
-  height: 16px;
-  filter: brightness(0) invert(1);
 }
