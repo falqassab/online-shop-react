@@ -22,7 +22,7 @@
 .product-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .product-details {
@@ -80,7 +80,9 @@
 }
 
 .btn-edit {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin-top: 12px;
   padding: 8px 16px;
   background-color: #f39c12;
@@ -89,10 +91,17 @@
   border-radius: 6px;
   font-size: 14px;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   text-align: center;
 }
 
 .btn-edit:hover {
   background-color: #e67e22;
+  transform: translateY(-2px);
+}
+
+.edit-icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
 }
