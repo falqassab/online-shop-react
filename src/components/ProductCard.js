@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ProductCard.css';
 
 function ProductCard({ product }) {
   // Get backend URL from environment
   const BACKEND_URL = process.env.REACT_APP_API_URL?.replace('/api', '') || 'http://localhost:3001';
+  
+  // Check if user is logged in
+  const isLoggedIn = !!localStorage.getItem('token');
   
   // Construct full image URL
   // If image_url starts with http/https, use it as is (external URL)
@@ -39,6 +43,12 @@ function ProductCard({ product }) {
         
         {product.category && (
           <span className="product-category">{product.category}</span>
+        )}
+        
+        {isLoggedIn && (
+          <Link to={`/edit-product/${product.id}`} className="btn-edit">
+            Edit
+          </Link>
         )}
       </div>
     </div>

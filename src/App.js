@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import AddProduct from './pages/AddProduct';
+import EditProduct from './pages/EditProduct';
 import './App.css';
 
 // Protected Route Component
@@ -37,6 +38,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <AddProduct />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/edit-product/:id" 
+              element={
+                <ProtectedRoute>
+                  <EditProduct />
                 </ProtectedRoute>
               } 
             />
