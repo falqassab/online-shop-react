@@ -2,9 +2,12 @@ import React from 'react';
 import './ProductCard.css';
 
 function ProductCard({ product }) {
+  // Get backend URL from environment
+  const BACKEND_URL = process.env.REACT_APP_API_URL?.replace('/api', '') || 'http://localhost:3001';
+  
   // Construct full image URL
   const imageUrl = product.image_url 
-    ? `http://localhost:3001${product.image_url}` 
+    ? `${BACKEND_URL}${product.image_url}` 
     : 'https://via.placeholder.com/300x200?text=No+Image';
 
   return (
