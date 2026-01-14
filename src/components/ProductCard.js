@@ -6,8 +6,12 @@ function ProductCard({ product }) {
   const BACKEND_URL = process.env.REACT_APP_API_URL?.replace('/api', '') || 'http://localhost:3001';
   
   // Construct full image URL
+  // If image_url starts with http/https, use it as is (external URL)
+  // Otherwise, prepend backend URL (uploaded image)
   const imageUrl = product.image_url 
-    ? `${BACKEND_URL}${product.image_url}` 
+    ? (product.image_url.startsWith('http') 
+        ? product.image_url 
+        : `${BACKEND_URL}${product.image_url}`)
     : 'https://via.placeholder.com/300x200?text=No+Image';
 
   return (
